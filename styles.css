@@ -9,8 +9,9 @@ html {
 }
 
 body {
-    background-color: #37352F;
+    background-color: transparent;
 }
+
 .box {
     background-color: #FFFFFF;
     height: auto;
