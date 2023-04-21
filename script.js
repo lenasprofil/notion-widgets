@@ -1,5 +1,5 @@
 /* prompt generator */
-var prompts = [
+const prompts = [
 
 "What is one thing that you take for granted that you are grateful for today?",
 "How has expressing gratitude impacted your life and the people around you?",
@@ -363,39 +363,34 @@ var prompts = [
 "Do you believe that your dreams can reveal your deepest desires or fears, even if you're not consciously aware of them?",
 ]
 
+function getDayOfYear() {
+  const now = new Date();
+  const startOfYear = new Date(now.getFullYear(), 0, 0);
+  const diff = now - startOfYear;
+  const oneDay = 1000 * 60 * 60 * 24;
+  const dayOfYear = Math.floor(diff / oneDay);
+  const date = new Date(now.getFullYear(), 0, dayOfYear + 1);
+  return { dayOfYear, date };
+}
+
+function displayPrompt() {
+  const { dayOfYear } = getDayOfYear();
+  const promptIndex = dayOfYear - 1;
+  const prompt = prompts[promptIndex];
+  document.getElementById("quoteDisplay").textContent = prompt;
+}
+
+displayPrompt();
+
+// random button
 function newPrompt() {
-    var randomNumber = Math.floor(Math.random() * prompts.length);
-    var quote = prompts[randomNumber];
-    setCookie("quote", quote, 1); // set the quote cookie to expire in 1 day
-    document.getElementById("quoteDisplay").innerHTML = "<q>" + quote + "</q>";
-  }
+  // Get a random prompt from the prompts array
+  const randomNumber = Math.floor(Math.random() * prompts.length);
+  const randomPrompt = prompts[randomNumber];
   
-  function setCookie(name, value, days) {
-    var expires = "";
-    if (days) {
-      var date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-  }
-  
-  function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-  }
-  
-  // check if a quote cookie exists and display it if it does
-  var quote = getCookie("quote");
-  if (quote) {
-    document.getElementById("quoteDisplay").innerHTML = "<q>" + quote + "</q>";
-  }
+  // Display the random prompt
+  document.getElementById("quoteDisplay").textContent = randomPrompt;
+}
 
 /* greeting */
 
@@ -405,19 +400,32 @@ const hour = new Date().getHours();
 // get the greeting based on the time of day
 let greeting;
 if (hour >= 5 && hour < 12) {
-  greeting = "🔆 Good morning";
+  greeting = "🔆 Good morning! Here is your prompt for the day:";
 } else if (hour >= 12 && hour < 18) {
-  greeting = "👋 Good afternoon";
+  greeting = "👋 Good afternoon! Here is your prompt for the day:";
 } else if (hour >= 18 && hour < 22) {
-  greeting = "👋 Good evening";
+  greeting = "👋 Good evening! Here is your prompt for the day:";
 } else {
-  greeting = "💤 It is getting late";
+  greeting = "💤 It is getting late...Here is your prompt for the day:";
 }
 
 // update the greeting element
 document.getElementById("greeting").textContent = greeting;
 
-
+// random button
+function newPrompt() {
+  // Get a random prompt from the prompts array
+  const randomNumber = Math.floor(Math.random() * prompts.length);
+  const randomPrompt = prompts[randomNumber];
+  
+  // Display the random prompt
+  const quoteDisplay = document.getElementById("quoteDisplay");
+  quoteDisplay.textContent = randomPrompt;
+  
+  // Update the greeting
+  const greeting = document.getElementById("greeting");
+  greeting.textContent = "🎲 Here is your new prompt:";
+  }
 
 
 
