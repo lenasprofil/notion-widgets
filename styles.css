@@ -7,7 +7,9 @@ html {
 *::after {
     box-sizing: inherit;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-}
+  }
+
+/* general styling */@media (min-width: 280px) {
 
 header {
   padding: 2%;
@@ -38,7 +40,6 @@ li {
 }
   
 
-
 span {
     color: #e27163;
     transition: 0.3s;
@@ -47,36 +48,17 @@ span {
 span:hover {
     color: #c4dde9;
 }
+
 .slogan {
     text-align: center;
-    font-size: 300%;
+    font-size: 200%;
+    justify-content: flex-start;
+}
+.hero.container {
+  display: flex;
+  flex-direction: row;
 }
 
-.deco {
-    width: 100px; height: 100px;
-    display: block;
-    transition: 0.2s;
-}
-
-.deco:hover {
-	animation: animation 1s 5 linear;
-}
-@keyframes animation {
-  50% {
-	color:#aaa;
-  }
-  100% {
-	color:rgb(0, 0, 0);
-  }
-}
-
-#doodle-twinkle {
-    float: right;
-}
-
-#doodle-twinkle2 {
-    float: left;
-}
 
 
 /* CSS */
@@ -133,7 +115,8 @@ span:hover {
 
 .buttoncenter {
     margin-top: 5%;
-    margin-left: 42%; margin-right: auto;
+    display: flex;
+    justify-content: center;
   }
 
   
@@ -141,95 +124,32 @@ span:hover {
     text-decoration: none;
     
 }
+}
 
-@media screen and (max-width: 950px) {
- 
+@media (max-width: 767px) {
 
-  html {
-    box-sizing: border-box;
+  header {
+    padding: 0%;
+    display: flex;
+    justify-content:;
   }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-header {
-  padding: 2%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.logo {
-    font-size: 130%;
-    transition: 0.3s;
-    float: right;
-}
-
-
-ul {
-    list-style-type: none;
-    text-align: right;
-    font-size: 130%;
-    
+  nav {
+    width: fit-content;
+    justify-content: flex-end;
   }
 
-li {
+  li {
     display: block;
     padding-inline-end: 0rem;
 }
 
 .slogan {
-    margin-top: -10%;
-    text-align: center;
-    font-size: 200%;
-}
-
-h1 {
-  margin: 0;
-}
-
-.deco {
-    width: 60px; height: 60px;
-    display: block;
-}
-
-#doodle-twinkle {
-    visibility: hidden;
-}
-
-#doodle-twinkle2 {
-    float: none;
-    margin-left: 40%;
-}
-
-a {
-    text-decoration: none;
+  font-size: 9vw;
 }
 
 .buttoncenter {
-  justify-content: center;
-  margin-left: auto;
-  width: fit-content;
-  margin-bottom: 10%;
-}
+  margin-bottom: 5vh;
 }
 
-/* IPAD Media queries*/
-
-@media screen and (min-width: 950px max-width: 1080px) {
-
-  .buttoncenter {
-    justify-content: center;
-    margin-left: 50%;
-    width: fit-content;
-    margin-bottom: 10%;
-  }
-
-
-
-
-
-
+}
