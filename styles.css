@@ -23,10 +23,6 @@ header {
     float: right;
 }
 
-.logo:hover {
-    color: #c4dde9;
-}
-
 ul {
     list-style-type: none;
     text-align: justify;
@@ -45,23 +41,33 @@ span {
     transition: 0.3s;
 }
 
-span:hover {
-    color: #c4dde9;
-}
-
-.slogan {
-    text-align: center;
-    font-size: 200%;
-    justify-content: flex-start;
-}
-.hero.container {
+.hero-container {
   display: flex;
   flex-direction: row;
 }
 
+.image {
+  transform: scale(1);
+  width: 50%;
+}
+
+.slogan {
+    text-align: center;
+    font-size: 180%;
+    width: 50%;
+    padding-left: 2%;
+}
+
+.slogan > p {
+  line-height: 1.3;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10%;
+  
+}
 
 
-/* CSS */
+/* button */
 .button-56 {
   align-items: center;
   background-color: #e27163;
@@ -117,6 +123,7 @@ span:hover {
     margin-top: 5%;
     display: flex;
     justify-content: center;
+    transform: scale(1.3);
   }
 
   
@@ -126,7 +133,8 @@ span:hover {
 }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 1024px){
+
 
   header {
     padding: 0%;
@@ -135,7 +143,6 @@ span:hover {
   }
 
   nav {
-    width: fit-content;
     justify-content: flex-end;
   }
 
@@ -144,12 +151,28 @@ span:hover {
     padding-inline-end: 0rem;
 }
 
-.slogan {
-  font-size: 9vw;
-}
-
-.buttoncenter {
-  margin-bottom: 5vh;
-}
+.hero-container {
+  flex-direction: column;
+  }
+  
+  .image {
+  width: 100%;
+  }
+  
+  .slogan {
+  width: 100%;
+  padding: 0 10%;
+  }
+  
+  .slogan > p {
+  font-size: 18px;
+  margin-bottom: 5%;
+  }
+  
+  .buttoncenter {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  transform: none;
+  }
 
 }
