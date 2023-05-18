@@ -12,7 +12,7 @@ html {
 /* general styling */@media (min-width: 280px) {
 
 header {
-  padding: 2%;
+  padding-right: 2%; padding-left: 2%;
   display: flex;
   justify-content: space-between;
 }
@@ -27,44 +27,61 @@ ul {
     list-style-type: none;
     text-align: justify;
     font-size: 150%;
-    
   }
 
 li {
     display: inline-block;
     padding-inline-end: 2rem;
 }
-  
 
-span {
+p > span,  p > a {
     color: #e27163;
 }
 
-.hero-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.image {
-  transform: scale(1);
-  width: 50%;
-}
-
-.slogan {
-    text-align: center;
-    font-size: 180%;
-    width: 50%;
-    padding-left: 2%;
-}
-
-.slogan > p {
-  line-height: 1.3;
-  font-size: 20px;
+.Tutorial {
   text-align: center;
-  margin-bottom: 10%;
-  
+  font-size: large;
+  margin-bottom: 40px;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    justify-content: space-evenly;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 300px
+}
+
+.caption > h1 {
+    font-size: 120%;
+}
+
+.caption > p {
+    margin-top: -10px;
+}
+
+.caption{
+    margin-bottom: 20px;
+    padding: 2px 16px;
+    accent-color: #e27163;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.radio {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
 /* button */
 .button-56 {
@@ -119,59 +136,16 @@ span {
 
 
 .buttoncenter {
-    margin-top: 5%;
+    margin-inline-start: 65px;
     display: flex;
     justify-content: center;
-    transform: scale(1.3);
+    transform: scale(0.9);
   }
 
-  
   a {
-    text-decoration: none;
-    
-}
-}
-
-@media (min-width: 320px) and (max-width: 1024px){
-
-
-  header {
-    padding: 0%;
-    display: flex;
-    justify-content:;
-  }
-
-  nav {
-    justify-content: flex-end;
-  }
-
-  li {
-    display: block;
-    padding-inline-end: 0rem;
+    text-decoration: none;  
+    color: #111;
 }
 
-.hero-container {
-  flex-direction: column;
-  }
-  
-  .image {
-  width: 100%;
-  }
-  
-  .slogan {
-  width: 100%;
-  padding: 0 10%;
-  }
-  
-  .slogan > p {
-  font-size: 18px;
-  margin-bottom: 5%;
-  }
-  
-  .buttoncenter {
-  margin-top: 10%;
-  margin-bottom: 10%;
-  transform: none;
-  }
 
 }
